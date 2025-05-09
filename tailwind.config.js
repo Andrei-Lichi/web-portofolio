@@ -1,0 +1,15 @@
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+        FontFamily: {
+            inter: ['var(--font-inter)']
+        },
+        colors: {
+            background: 'var(--background)',
+            foreground: 'var(--foreground)',
+        }
+    },
+  },
+  plugins: [],
+}
