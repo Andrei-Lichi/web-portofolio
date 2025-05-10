@@ -10,7 +10,8 @@ export default function Model(props) {
   useFrame((state) => {
     const elapsed = state.clock.getElapsedTime()
 
-    modelRef.current.position.y = Math.sin(elapsed) * 0.2
+    modelRef.current.position.y = Math.sin(elapsed) * 0.2;
+    modelRef.current.rotation.y = Math.sin(elapsed * 0.5) * 0.2;
 
   })
 
