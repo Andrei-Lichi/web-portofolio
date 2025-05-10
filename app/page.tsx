@@ -2,8 +2,9 @@
 
 import Image from "next/image"
 import background from "../public/background/mainBackground.jpg"
-import RenderModel from "../app/components/RenderModel"
+import RenderModel from "./components/models/RenderModel"
 import WitcherMedallionModel from "../app/components/models/Witcher_medallion2"
+import Navbar from "./components/navbar/navbar"
 
 export default function Home() {
   return (
@@ -12,9 +13,8 @@ export default function Home() {
       <Image src={background} fill alt="background image" className="w-full h-full object-cover object-center opacity-75"/>
  
       <div className="w-full h-screen">
-        <RenderModel >
-          <WitcherMedallionModel/>
-        </RenderModel>
+        <Navbar/>
+        <RenderModel><WitcherMedallionModel/></RenderModel>
       </div>
 
     </main>
