@@ -11,7 +11,7 @@ const Navbar = () => {
 
     return (
         <div className='fixed w-full h-screen flex items-center justify-center z-50'>
-            <div className= 'flex items-center justify-inbetween relative'>
+            <div className= 'flex items-center justify-inbetween relative animate-spin'>
                 {   
                     listOfButtons.map((button, index) => {
                         const buttonDirection = (index * numberOfButtons * Math.PI) / 180;
