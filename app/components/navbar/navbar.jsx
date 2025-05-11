@@ -13,11 +13,11 @@ const Navbar = () => {
             <div className= 'flex items-center justify-inbetween relative'>
                 {   
                     listOfButtons.map((button, index) => {
-                        const buttonPosition = (index * numberOfButtons * Math.PI) / 180;
+                        const buttonDirection = (index * numberOfButtons * Math.PI) / 180;
                         const circleRadius = 'calc(20vw - 1rem)';
-                        const x = `calc(${circleRadius} * ${Math.cos(buttonPosition)})`;
-                        const y = `calc(${circleRadius} * ${Math.sin(buttonPosition)})`;
-                        return <button key = {index} className='absolute' style={{transform: `translate(${x}, ${y})`}}> {button.label} </button>
+                        const buttonXCoordinate = `calc(${circleRadius} * ${Math.cos(buttonDirection)})`;
+                        const buttonYCoordinate = `calc(${circleRadius} * ${Math.sin(buttonDirection)})`;
+                        return <button key = {index} className='absolute' style={{transform: `translate(${buttonXCoordinate}, ${buttonYCoordinate})`}}> {button.label} </button>
                     })
                 }
             </div>
