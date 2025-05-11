@@ -16,9 +16,9 @@ const Navbar = () => {
                     listOfButtons.map((button, index) => {
                         const buttonDirection = (index * numberOfButtons * Math.PI) / 180;
                         const circleRadius = 'calc(20vw - 1rem)';
-                        const buttonXCoordinate = `calc(${circleRadius} * ${Math.cos(buttonDirection)})`;
-                        const buttonYCoordinate = `calc(${circleRadius} * ${Math.sin(buttonDirection)})`;
-                        return <NavbarButton key = {button.key} buttonXCoordinate = {buttonXCoordinate} buttonYCoordinate = {buttonYCoordinate} {...button}/>
+                        const xCoordinate = `calc(${circleRadius} * ${Math.cos(buttonDirection)})`;
+                        const yCoordinate = `calc(${circleRadius} * ${Math.sin(buttonDirection)})`;
+                        return <NavbarButton key = {button.key} xCoordinate = {xCoordinate} yCoordinate = {yCoordinate} {...button}/>
                     })
                 }
             </div>
