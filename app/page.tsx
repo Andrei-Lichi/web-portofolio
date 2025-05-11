@@ -15,7 +15,7 @@ export default function Home() {
           src={background}
           fill
           alt="background image"
-          className="object-cover object-center opacity-75"
+          className="object-cover object-center opacity-95"
         />
       </div> 
       
