@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
-      <body className="font-inter bg-background text-foreground">
+      <body className="font-inter text-foreground">
         {children}
       </body>
     </html>
