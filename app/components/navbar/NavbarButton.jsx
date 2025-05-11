@@ -29,13 +29,13 @@ const NavbarButton = ( {xCoordinate, yCoordinate, label, link, icon, newTab} ) =
   return (
 <div className='absolute top-1/2 left-1/2 cursor-pointer' style={{ transform: `translate(-50%, -50%) translate(${xCoordinate}, ${yCoordinate})` }}>
       <Link 
-        className = 'text-foreground rounded-full flex items-center justify-center bg-background/20 border border-accent/30 border-solid backdrop-blur-[5px]' 
+        className = 'rounded-full flex border backdrop-blur-[5px] shadow-glass-inset hover:shadow-glass-sm' 
         href = {link} 
         target = {newTab ? '_blank' : '_self'}
         name = {label} 
         aria-label = {label}
       >
-        <span className='relative w-14 h-14 p-4'>
+        <span className='relative w-14 h-14 p-4 animate-spin-reverse'>
           { getIcon(icon) }
         </span>
       </Link>
