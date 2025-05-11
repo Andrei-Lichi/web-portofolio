@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { listOfButtons } from '../../data/seed'
+import NavbarButton from '../navbar/NavbarButton'
 
 const Navbar = () => {
 
@@ -17,7 +18,7 @@ const Navbar = () => {
                         const circleRadius = 'calc(20vw - 1rem)';
                         const buttonXCoordinate = `calc(${circleRadius} * ${Math.cos(buttonDirection)})`;
                         const buttonYCoordinate = `calc(${circleRadius} * ${Math.sin(buttonDirection)})`;
-                        return <button key = {index} className='absolute' style={{transform: `translate(${buttonXCoordinate}, ${buttonYCoordinate})`}}> {button.label} </button>
+                        return <NavbarButton key = {button.key} buttonXCoordinate = {buttonXCoordinate} buttonYCoordinate = {buttonYCoordinate} {...button}/>
                     })
                 }
             </div>
