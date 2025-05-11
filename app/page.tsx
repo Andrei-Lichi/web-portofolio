@@ -10,9 +10,16 @@ export default function Home() {
   return (
     <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
 
-      <Image src= {background} fill alt="background image" className="w-full h-full object-cover object-center opacity-75"/>
- 
-      <div className="w-full h-screen">
+      <div className="absolute inset-0">
+        <Image
+          src={background}
+          fill
+          alt="background image"
+          className="object-cover object-center opacity-75"
+        />
+      </div> 
+      
+      <div className="w-full h-screen relative">
         <Navbar/>
         <RenderModel><WitcherMedallionModel/></RenderModel>
       </div>
