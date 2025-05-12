@@ -3,21 +3,37 @@
 import React, { useEffect, useState } from 'react';
 
 const createParticles = () => {
-  const duration = `${Math.random() * 5 + 5}s`;
+  const duration = `${Math.random() * 5 + 10}s`;
   const startLeft = Math.random() * 100;
   const rotation = Math.random() * 720;
 
   return {
     id: Math.random(),
-    top: `-${Math.random() * 10}vh`, 
+    top: `-${Math.random() * 10}vh`,
     left: `${startLeft}%`,
     animationDuration: duration,
     rotation,
-    translateX: `${Math.random() * 50 + 50}vw`, 
+    translateX: `${Math.random() * 50 + 50}vw`,
     translateY: `100vh`,
   };
 };
 
+const getParticle = (particle) => (
+  <img
+    key = {particle.id}
+    src = "/images/leaf1.png"
+    alt = "particle"
+    className = "particle"
+    style={{
+      top: particle.top,
+      left: particle.left,
+      animationDuration: particle.animationDuration,
+      '--translate-x': particle.translateX,
+      '--translate-y': particle.translateY,
+      '--rotate': `${particle.rotation}deg`,
+    }}
+  />
+);
 
 const ParticlesBackground = () => {
   const [particles, setParticles] = useState([]);
@@ -26,7 +42,7 @@ const ParticlesBackground = () => {
     const addRandomParticles = () => {
       const newParticle = createParticles();
       setParticles(currentParticles => [
-        ...currentParticles.slice(-10),
+        ...currentParticles.slice(-15),
         newParticle
       ]);
     };
@@ -37,20 +53,7 @@ const ParticlesBackground = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-      { particles.map((particle) => ( 
-            <div
-                key={particle.id}
-                className="particle"
-                style={{
-                    top: particle.top,
-                    left: particle.left,
-                    animationDuration: particle.animationDuration,
-                    '--translate-x': particle.translateX,
-                    '--translate-y': particle.translateY,
-                    '--rotate': `${particle.rotation}deg`,
-                }}
-            />
-        ))}
+      {particles.map(getParticle)}
     </div>
   );
 };

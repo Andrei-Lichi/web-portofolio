@@ -103,25 +103,24 @@
   }
 
   @keyframes particle-move {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 1;
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(var(--translate-x), var(--translate-y)) rotate(var(--rotate));
+      opacity: 0;
+    }
   }
-  100% {
-    transform: translate(100vw, 100vh) rotate(720deg);
-    opacity: 0;
-  }
-}
 
   .particle {
+    position: absolute;
     animation-name: particle-move;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    position: absolute;
-    border-radius: 9999px;
-    width: 20px;
-    height: 20px;
-    background-color: rgba(255, 0, 0, 0.1); /* temporary visible color */
+    width: 30px;
+    height: auto;
+    pointer-events: none;
   }
 
 }
