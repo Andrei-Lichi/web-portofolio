@@ -11,7 +11,7 @@ const RenderModel = ({ children }) => {
         {children}
         {}
       </Suspense>
-      <Environment preset="lobby"/>
+      <Environment preset="studio"/>
     </Canvas>
   )
 }
