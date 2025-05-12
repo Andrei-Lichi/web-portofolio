@@ -30,7 +30,7 @@ const NavbarButton = ( {xCoordinate, yCoordinate, label, link, icon, newTab} ) =
         <span className='relative w-23 h-23 p-2 border icon-border rounded-full backdrop-blur-[5px] animate-spin-reverse group-hover:text-accent menu-icon '>
           { getIcon(icon) }
           <span className='peer bg-transparent absolute top-0 left-0 w-full h-full'></span>
-          <span className='absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-labelBackground text-foreground text-sm rounded--md shadow-lg whispace-nowrap'>
+          <span className='absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-labelBackground text-foreground text-sm rounded--md shadow-lg whispace-nowrap font-witcher'>
             {label}
           </span>
         </span>

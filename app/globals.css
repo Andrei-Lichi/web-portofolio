@@ -4,7 +4,7 @@
   :root {
     --background: #504d4d;   
     --foreground: #ffffff;   
-    --accent: rgb(88, 88, 88); 
+    --accent: rgb(43, 43, 43); 
     --font-inter: 'Inter', sans-serif;
     --labelBackground: linear-gradient(135deg, #271408, #381e10);
     --iconBorder: #ffffff;
@@ -12,7 +12,6 @@
 }
 
 @layer utilities {
-  
   /* Font family */
   .font-inter {
     font-family: var(--font-inter);
@@ -74,6 +73,17 @@
     box-shadow: 0 0 25px 10px var(--accent);
   }
 
+  .font-witcher {
+    font-family: 'WitcherFont';
+  }
+
+  @font-face {
+    font-family: 'WitcherFont';
+    src: url('/fonts/witcherFont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
   /* Keyframes */
   @keyframes spin {
     from {
@@ -92,3 +102,8 @@
     }
   }
 }
+
+
+
+
+

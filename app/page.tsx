@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import background from "../public/background/mainBackground.jpg"
+import background from "../public/images/mainBackground.jpg"
 import RenderModel from "./components/models/RenderModel"
 import WitcherMedallionModel from "../app/components/models/Witcher_medallion2"
 import Navbar from "./components/navbar/Navbar"
