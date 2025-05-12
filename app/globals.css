@@ -10,72 +10,65 @@
 }
 
 @layer utilities {
+  
+  /* Font family */
   .font-inter {
     font-family: var(--font-inter);
   }
 
+  /* Background and foreground colors */
   .bg-background {
     background-color: var(--background);
   }
-
   .text-foreground {
     color: var(--foreground);
   }
 
+  /* Accent colors */
   .border-accent {
     border-color: rgba(254, 254, 91, 0.3);
   }
-
   .text-accent {
     color: var(--accent);
   }
-
   .hover\:text-accent:hover {
     color: var(--accent); 
   }
 
+  /* Shadow Effects */
   .shadow-glass-inset {
     box-shadow: inset 0 15px 5px -10px rgba(91, 129, 254, 0.05);
   }
-
   .shadow-glass-sm {
     box-shadow: 5px 5px 25px 0px rgba(254, 254, 91, 0.3);
   }
 
+  /* Hover effects */
   .hover\:shadow-glass-sm:hover {
     box-shadow: 5px 5px 25px 0px rgba(17, 17, 17, 0.7);
   }
-
   .menu:hover {
     animation-play-state: paused;
   }
-
+  .menu:hover .menu-icon {
+    animation-play-state: paused;
+  }
+  
+  /* Spin animation */
   .animate-spin {
     animation: spin 40s linear infinite;
   }
-
   .animate-spin-reverse {
     animation: spin-reverse 40s linear infinite;
   }
 
+  /* Hover effect for buttons inside the menu */
   .group:hover {
     color: var(--accent);
     box-shadow: 5px 5px 25px var(--accent);
   }
-  
-  .menu:hover .menu-icon {
-    animation-play-state: paused;
-  }
 
-  @keyframes spin-reverse {
-    from {
-      transform: rotate(360deg);
-    }
-    to {
-      transform: rotate(0deg);
-    }
-  }
-
+  /* Keyframes */
   @keyframes spin {
     from {
       transform: rotate(0deg);
@@ -84,6 +77,12 @@
       transform: rotate(360deg);
     }
   }
-
-
+  @keyframes spin-reverse {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
 }
