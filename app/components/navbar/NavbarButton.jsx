@@ -3,14 +3,14 @@ import React from 'react'
 
 const getIcon = (icon) => {
   const iconPaths = {
-    home: 'audio/A.png',
-    about: 'audio/B.png',
-    projects: 'audio/C.png',
-    contact: 'audio/D.png',
-    resume: 'audio/E.png',
-    github: 'audio/F.png',
-    linkedin: 'audio/G.png',
-    X: 'audio/H.png',
+    home: 'icons/witcherIcons/A.png',
+    about: 'icons/witcherIcons/B.png',
+    projects: 'icons/witcherIcons/C.png',
+    contact: 'icons/witcherIcons/D.png',
+    resume: 'icons/witcherIcons/E.png',
+    github: 'icons/witcherIcons/F.png',
+    linkedin: 'icons/witcherIcons/G.png',
+    X: 'icons/witcherIcons/H.png',
   }
 
   const iconPath = iconPaths[icon];
@@ -27,8 +27,12 @@ const NavbarButton = ( {xCoordinate, yCoordinate, label, link, icon, newTab} ) =
         name = {label} 
         aria-label = {label}
       >
-        <span className='relative w-23 h-23 rounded-full backdrop-blur-[1px] animate-spin-reverse group-hover:text-accent menu-icon '>
+        <span className='relative w-23 h-23 p-2 border icon-border rounded-full backdrop-blur-[5px] animate-spin-reverse group-hover:text-accent menu-icon '>
           { getIcon(icon) }
+          <span className='peer bg-transparent absolute top-0 left-0 w-full h-full'></span>
+          <span className='absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-labelBackground text-foreground text-sm rounded--md shadow-lg whispace-nowrap'>
+            {label}
+          </span>
         </span>
       </Link>
     </div>

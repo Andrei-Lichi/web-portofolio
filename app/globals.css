@@ -2,10 +2,12 @@
 
 @layer base {
   :root {
-    --background: #000000;   
+    --background: #504d4d;   
     --foreground: #ffffff;   
-    --accent: rgb(19, 18, 13); 
+    --accent: rgb(88, 88, 88); 
     --font-inter: 'Inter', sans-serif;
+    --labelBackground: linear-gradient(135deg, #271408, #381e10);
+    --iconBorder: #ffffff;
   }
 }
 
@@ -16,15 +18,19 @@
     font-family: var(--font-inter);
   }
 
-  /* Background and foreground colors */
+  /* Colors */
   .bg-background {
     background-color: var(--background);
+  }
+  .bg-labelBackground {
+    background-image: var(--labelBackground);
+  }
+  .icon-border {
+    border-color: var(--iconBorder);
   }
   .text-foreground {
     color: var(--foreground);
   }
-
-  /* Accent colors */
   .border-accent {
     border-color: rgba(254, 254, 91, 0.3);
   }
@@ -65,7 +71,7 @@
   /* Hover effect for buttons inside the menu */
   .group:hover {
     color: var(--accent);
-    box-shadow: 5px 5px 25px var(--accent);
+    box-shadow: 0 0 25px 10px var(--accent);
   }
 
   /* Keyframes */
