@@ -3,20 +3,23 @@
 import React, { useEffect, useState } from 'react';
 
 const createParticles = () => {
-  const duration = `${Math.random() * 5 + 10}s`;
-  const startLeft = Math.random() * 100;
+  const duration = `${Math.random() * 5 + 20}s`; 
+  const startLeft = Math.random() < 0.5
+    ? Math.random() * -60 
+    : Math.random() * 100;
   const rotation = Math.random() * 720;
 
   return {
     id: Math.random(),
     top: `-${Math.random() * 10}vh`,
     left: `${startLeft}%`,
-    animationDuration: duration,
+    animationDuration: duration,  
     rotation,
     translateX: `${Math.random() * 50 + 50}vw`,
     translateY: `100vh`,
   };
 };
+
 
 const getParticle = (particle) => (
   <img
@@ -42,7 +45,7 @@ const ParticlesBackground = () => {
     const addRandomParticles = () => {
       const newParticle = createParticles();
       setParticles(currentParticles => [
-        ...currentParticles.slice(-15),
+        ...currentParticles.slice(-10),
         newParticle
       ]);
     };
