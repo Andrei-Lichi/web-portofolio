@@ -4,7 +4,7 @@
   :root {
     --background: #504d4d;   
     --foreground: #ffffff;   
-    --accent: rgb(43, 43, 43); 
+    --accent: rgb(41, 29, 3); 
     --font-inter: 'Inter', sans-serif;
     --labelBackground: linear-gradient(135deg, #271408, #381e10);
     --iconBorder: #ffffff;
@@ -101,6 +101,29 @@
       transform: rotate(0deg);
     }
   }
+
+  @keyframes particle-move {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100vw, 100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+  .particle {
+    animation-name: particle-move;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+    border-radius: 9999px;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 0, 0, 0.1); /* temporary visible color */
+  }
+
 }
 
 

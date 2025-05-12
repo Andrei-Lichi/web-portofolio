@@ -3,8 +3,9 @@
 import Image from "next/image"
 import background from "../public/images/mainBackground.jpg"
 import RenderModel from "./components/models/RenderModel"
-import WitcherMedallionModel from "../app/components/models/Witcher_medallion2"
+import WitcherMedallionModel from "./components/models/WitcherMedallion"
 import Navbar from "./components/navbar/Navbar"
+import ParticlesBackground from "./components/particles/ParticlesBackground"
 
 export default function Home() {
   return (
@@ -18,6 +19,8 @@ export default function Home() {
           className="object-cover object-center opacity-95"
         />
       </div> 
+      
+      <ParticlesBackground/>
       
       <div className="w-full h-screen relative">
         <Navbar/>
