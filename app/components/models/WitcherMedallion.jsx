@@ -39,4 +39,4 @@ useFrame((state) => {
   )
 }
 
-useGLTF.preload("/models/witcher_medallion2.glb")
+useGLTF.preload("/models/witcher_medallion.glb")

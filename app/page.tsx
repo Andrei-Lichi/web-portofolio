@@ -6,6 +6,7 @@ import RenderModel from "./components/models/RenderModel"
 import WitcherMedallionModel from "./components/models/WitcherMedallion"
 import Navbar from "./components/navbar/Navbar"
 import ParticlesBackground from "./components/particles/ParticlesBackground"
+import BackgroundMusic from "./components/Sound/BackgroundMusic"
 
 export default function Home() {
   return (
@@ -21,7 +22,10 @@ export default function Home() {
       </div> 
       
       <ParticlesBackground/>
-      
+      <BackgroundMusic/>
+
+      <div id ="my-modal"/>
+
       <div className="w-full h-screen relative">
         <Navbar/>
         <RenderModel><WitcherMedallionModel/></RenderModel>
