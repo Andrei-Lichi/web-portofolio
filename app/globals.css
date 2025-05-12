@@ -4,7 +4,7 @@
   :root {
     --background: #000000;   
     --foreground: #ffffff;   
-    --accent: rgba(254, 254, 91, 1); 
+    --accent: rgb(19, 18, 13); 
     --font-inter: 'Inter', sans-serif;
   }
 }
@@ -26,6 +26,14 @@
     border-color: rgba(254, 254, 91, 0.3);
   }
 
+  .text-accent {
+    color: var(--accent);
+  }
+
+  .hover\:text-accent:hover {
+    color: var(--accent); 
+  }
+
   .shadow-glass-inset {
     box-shadow: inset 0 15px 5px -10px rgba(91, 129, 254, 0.05);
   }
@@ -38,6 +46,10 @@
     box-shadow: 5px 5px 25px 0px rgba(17, 17, 17, 0.7);
   }
 
+  .menu:hover {
+    animation-play-state: paused;
+  }
+
   .animate-spin {
     animation: spin 40s linear infinite;
   }
@@ -46,12 +58,32 @@
     animation: spin-reverse 40s linear infinite;
   }
 
+  .group:hover {
+    color: var(--accent);
+    box-shadow: 5px 5px 25px var(--accent);
+  }
+  
+  .menu:hover .menu-icon {
+    animation-play-state: paused;
+  }
+
   @keyframes spin-reverse {
-  from {
-    transform: rotate(360deg);
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
   }
-  to {
-    transform: rotate(0deg);
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
-}
+
+
 }
