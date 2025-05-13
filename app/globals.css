@@ -4,9 +4,13 @@
   :root {
     --background: #504d4d;   
     --foreground: #ffffff;   
-    --accent: rgb(41, 29, 3); 
+    --accent: rgb(0, 0, 0); 
     --font-inter: 'Inter', sans-serif;
     --labelBackground: linear-gradient(135deg, #271408, #381e10);
+    --musicIconBackground: rgba(82, 82, 82, 0.4);
+    --musicPopupBackground: rgba(82, 82, 82, 0.6);
+    --musicPopupButtonBackground: rgb(0, 0, 0, 0.6);
+    --musicPopupButtonBackgroundHover: rgb(0, 0, 0, 0.8);
     --iconBorder: #ffffff;
   }
 }
@@ -20,6 +24,18 @@
   /* Colors */
   .bg-background {
     background-color: var(--background);
+  }
+
+  .bg-musicIcon {
+    background-color: var(--musicIconBackground);
+  }
+
+  .bg-musicPopupButon {
+    background-color: var(--musicPopupButtonBackground);
+  }
+
+  .bg-musicPopup {
+    background-color: var(--musicPopupBackground);
   }
 
   .bg-labelBackground {
@@ -60,6 +76,11 @@
     box-shadow: 5px 5px 25px 0px rgba(17, 17, 17, 0.7);
   }
 
+  .hover\:popup-button-hover-effect:hover {
+    background-color: var(--musicPopupButtonBackgroundHover);
+    box-shadow: 5px 5px 25px 0px rgba(17, 17, 17, 0.7); 
+  }
+
   .menu:hover {
     animation-play-state: paused;
   }
@@ -81,6 +102,11 @@
   .group:hover {
     color: var(--accent);
     box-shadow: 0 0 25px 10px var(--accent);
+  }
+
+  .soundGroup:hover {
+    color: var(--accent);
+    box-shadow: 0 0 10px 2px var(--accent);
   }
 
   .font-witcher {

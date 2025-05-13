@@ -17,13 +17,17 @@ const BackgroundMusic = () => {
   const Modal = ({onClose, toggle}) => {
     return createPortal(
       <div className='fixed inset-0 backdrop-blur-sm flex items-center justify-center z-3'>
-        <div className='border border-solid py-8 px-6 xs:px-10 sm:px-16 rounded text-center space-y-8'>
-         <p className='font-light font-witcher'> Do you like to play blackground music?  </p>
-         <p className='font-light font-witcher'>- Everytime You Leave by Sonya Ostinelli - </p>
-         <div className='flex items-center justify-center space-x-4'>
-          <button onClick = {toggle} className='px-4 py-2 border border-solid rounded mr-2 font-witcher'> Yes </button>
-          <button onClick = {onClose} className='px-4 py-2 border border-solid rounded font-witcher'> No </button>
-         </div>
+        <div className='border border-solid py-8 rounded-lg px-6 xs:px-10 sm:px-16 text-center space-y-4 bg-musicPopup'>
+          <div className="flex justify-center items-center">
+            <img src="/images/Witcher3Logo.png" alt="Logo" className="max-w-60 h-auto rounded" />
+          </div>
+          <p className='font-light font-witcher text-2xl'> Lichi's portfolio</p>
+          <p className='font-light font-witcher'> Do you like to play blackground music?  </p>
+          <p className='font-light font-witcher'>- Everytime You Leave by Sonya Ostinelli - </p>
+          <div className='flex items-center justify-center space-x-4 mt-8'>
+            <button onClick={toggle} className='px-4 py-2 border border-solid rounded mr-2 font-witcher bg-musicPopupButon cursor-pointer hover:popup-button-hover-effect'> Yes </button>
+            <button onClick={onClose} className='px-4 py-2 border border-solid rounded font-witcher bg-musicPopupButon cursor-pointer hover:popup-button-hover-effect'> No </button>
+          </div>
         </div>
       </div>,
       document.getElementById('my-modal')
@@ -60,7 +64,7 @@ const BackgroundMusic = () => {
   }
 
   return (
-    <div className='fixed top-4 right-4 xs:right-4 z-2 group rounded-full'>
+    <div className='fixed top-4 right-4 xs:right-4 z-2 rounded-full soundGroup'>
 
       { showModal && <Modal onClose={() => setShowModal(false)} toggle = {toggle} /> }
      
@@ -74,13 +78,11 @@ const BackgroundMusic = () => {
       initial = {{scale:0}}
       animate = {{scale:1}}
       transition = {{delay: 1}}
-      className = "w-10 h-10 xs:w-14 xs:h-14 text-foreground rounded-full flex items-center justify-center cursor-pointer p-2.5 xs:p-4 border icon-border"
-      aria-label = {"home"}
-      name = {"home"}
+      className = "w-10 h-10 xs:w-14 xs:h-14 text-foreground bg-musicIcon rounded-full flex items-center justify-center cursor-pointer p-2.5 xs:p-4 border icon-border"
       >
       {
-        isPlaying? <Volume2 className = "w-full h-full text-foreground group-hover:text-accent" strokeWidth = {1.5}></Volume2> 
-          :  <VolumeX className = "w-full h-full text-foreground group-hover:text-accent" strokeWidth = {1.5}></VolumeX> 
+        isPlaying? <Volume2 className = "w-full h-full text-foreground " strokeWidth = {1.5}></Volume2> 
+          :  <VolumeX className = "w-full h-full text-foreground " strokeWidth = {1.5}></VolumeX> 
       }
       </motion.button>
 

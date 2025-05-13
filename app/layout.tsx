@@ -20,6 +20,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
+        <head>
+        {/* If not using metadata.icons, you can put this manually: */}
+        <link rel="icon" href="/icons/witcherIcons/favicon.png" type="image/png" />
+      </head>
       <body className="font-inter text-foreground">
         {children}
       </body>
