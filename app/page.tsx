@@ -26,7 +26,7 @@ export default function Home() {
 
       <div id ="my-modal"/>
 
-      <div className="w-full h-screen relative">
+      <div className="w-full h-screen absolute">
         <Navbar/>
         <RenderModel><WitcherMedallionModel/></RenderModel>
       </div>
