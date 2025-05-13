@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { listOfButtons } from '../../data/seed'
-import NavbarButton from '../navbar/NavbarButton'
+import NavbarButton from './NavbarButton'
 
 const Navbar = () => {
 
