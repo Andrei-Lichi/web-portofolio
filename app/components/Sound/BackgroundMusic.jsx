@@ -18,11 +18,11 @@ const BackgroundMusic = () => {
     return createPortal(
       <div className='fixed inset-0 backdrop-blur-sm flex items-center justify-center z-3'>
         <div className='border border-solid py-8 px-6 xs:px-10 sm:px-16 rounded text-center space-y-8'>
-         <p className='font-light'> Do you like to play blackground music?  </p>
-         <p className='font-light '>- Everytime You Leave (The Witcher) by Sonya Ostinelli - </p>
+         <p className='font-light font-witcher'> Do you like to play blackground music?  </p>
+         <p className='font-light font-witcher'>- Everytime You Leave by Sonya Ostinelli - </p>
          <div className='flex items-center justify-center space-x-4'>
-          <button onClick = {toggle} className='px-4 py-2 border border-solid rounded mr-2'> Yes </button>
-          <button onClick = {onClose} className='px-4 py-2 border border-solid rounded'> No </button>
+          <button onClick = {toggle} className='px-4 py-2 border border-solid rounded mr-2 font-witcher'> Yes </button>
+          <button onClick = {onClose} className='px-4 py-2 border border-solid rounded font-witcher'> No </button>
          </div>
         </div>
       </div>,
