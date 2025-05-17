@@ -11,8 +11,10 @@ const BackgroundMusic = () => {
   const [isPlaying, setIsPlaying] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const musicConsent = "musicConsent";
+  const consentTime = "consentTime";
   const userEvents = ["click", "keydown", "touchstart"];
   const hasConsent = () => localStorage.getItem(musicConsent) === "true";
+
   
   const Modal = ({onClose, toggle}) => {
     return createPortal(
@@ -46,11 +48,15 @@ const BackgroundMusic = () => {
   }
 
   useEffect(() => {
-    if (hasConsent()) {
-      setIsPlaying(true)
-        userEvents.forEach((event) => 
-        document.addEventListener(event, handleFirstUserInteraction)
-        )
+    const consentTimeIsValid = localStorage.getItem("consentTime")
+    const consentTimestamp = consentTimeIsValid ? new Date(consentTimeIsValid).getTime() : null;
+    const oneDayInMs = 1 * 24 * 60 * 60 * 1000;
+    const currentTime = new Date();
+
+    if (hasConsent() && consentTimeIsValid && consentTimestamp + oneDayInMs > currentTime) {
+        setIsPlaying(true);
+        userEvents.forEach((event) => document.addEventListener(event, handleFirstUserInteraction))
+
     } else {
       setShowModal(true);
     }
@@ -60,6 +66,7 @@ const BackgroundMusic = () => {
     setIsPlaying(!isPlaying);
     !isPlaying ? audioRef.current.play() : audioRef.current.pause()
     localStorage.setItem(musicConsent, String(!isPlaying))
+    localStorage.setItem(consentTime, new Date().toISOString());
     setShowModal(false);
   }
 
@@ -79,7 +86,9 @@ const BackgroundMusic = () => {
       animate = {{scale:1}}
       transition = {{delay: 1}}
       className = "w-10 h-10 xs:w-14 xs:h-14 text-foreground bg-musicIcon rounded-full flex items-center justify-center cursor-pointer p-2.5 xs:p-4 border icon-border"
-      >
+      aria-label = {"home"}
+      name = {"home"}>
+
       {
         isPlaying? <Volume2 className = "w-full h-full text-foreground " strokeWidth = {1.5}></Volume2> 
           :  <VolumeX className = "w-full h-full text-foreground " strokeWidth = {1.5}></VolumeX> 

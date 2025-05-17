@@ -11,6 +11,7 @@
     --musicPopupBackground: rgba(82, 82, 82, 0.6);
     --musicPopupButtonBackground: rgb(0, 0, 0, 0.6);
     --musicPopupButtonBackgroundHover: rgb(0, 0, 0, 0.8);
+    --buttonHoverColor: rgb(58, 34, 6); 
     --iconBorder: #ffffff;
   }
 }
@@ -107,6 +108,11 @@
   .soundGroup:hover {
     color: var(--accent);
     box-shadow: 0 0 10px 2px var(--accent);
+  }
+
+  .buttonHover:hover {
+    color: var(--buttonHoverColor);
+    box-shadow: 0 0 25px 10px var(--buttonHoverColor);
   }
 
   .font-witcher {

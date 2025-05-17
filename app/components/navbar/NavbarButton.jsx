@@ -21,13 +21,13 @@ const NavbarButton = ( {xCoordinate, yCoordinate, label, link, icon, newTab} ) =
   return (
 <div className='absolute top-1/2 left-1/2 cursor-pointer' style={{ transform: `translate(-50%, -50%) translate(${xCoordinate}, ${yCoordinate})` }}>
       <Link 
-        className = 'group rounded-full flex shadow-glass-inset hover:shadow-glass-sm' 
+        className = 'buttonHover rounded-full flex shadow-glass-inset hover:shadow-glass-sm' 
         href = {link} 
         target = {newTab ? '_blank' : '_self'}
         name = {label} 
         aria-label = {label}
       >
-        <span className='relative w-23 h-23 p-2 border icon-border rounded-full backdrop-blur-[5px] animate-spin-reverse group-hover:text-accent menu-icon '>
+        <span className='relative w-23 h-23 p-2 border icon-border rounded-full backdrop-blur-[5px] animate-spin-reverse menu-icon '>
           { getIcon(icon) }
           <span className='peer bg-transparent absolute top-0 left-0 w-full h-full'></span>
           <span className='absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-labelBackground text-foreground text-sm rounded--md shadow-lg whispace-nowrap font-witcher'>
