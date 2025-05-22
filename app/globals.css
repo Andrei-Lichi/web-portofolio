@@ -65,7 +65,7 @@
 
   /* Shadow Effects */
   .shadow-glass-inset {
-    box-shadow: inset 0 15px 5px -10px rgba(91, 129, 254, 0.05);
+    box-shadow: inset 0 15px 5px -10px rgba(94, 64, 1, 0.5);
   }
 
   .shadow-glass-sm {
@@ -111,7 +111,6 @@
   }
 
   .buttonHover:hover {
-    color: var(--buttonHoverColor);
     box-shadow: 0 0 25px 10px var(--buttonHoverColor);
   }
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import BackgroundMusic from "./components/sound/BackgroundMusic"
+import ParticlesBackground from "./components/particles/ParticlesBackground"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +27,10 @@ export default function RootLayout({
       </head>
       <body className="font-inter text-foreground">
         {children}
+      <ParticlesBackground/>
+      <BackgroundMusic/>
       </body>
     </html>
+
   );
 }
