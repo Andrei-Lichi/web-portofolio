@@ -16,4 +16,7 @@ export const projectsData = [
     { id: 4, name: "project 4asdaw", description: "description 4", date: "2025-05-15", link: "https://github.com/Andrei-Lichi/jasper-the-lost-twin-game" },
     { id: 5, name: "project 5", description: "description 5", date: "2025-05-15", link: "https://github.com/Andrei-Lichi/jasper-the-lost-twin-game" },
     { id: 6, name: "project 6", description: "description 6", date: "2025-05-15", link: "https://github.com/Andrei-Lichi/jasper-the-lost-twin-game" },
+    { id: 7, name: "project 7", description: "description 7", date: "2025-05-15", link: "https://github.com/Andrei-Lichi/jasper-the-lost-twin-game" },
+    { id: 8, name: "project 8", description: "description 8", date: "2025-05-15", link: "https://github.com/Andrei-Lichi/jasper-the-lost-twin-game" },
+
 ]

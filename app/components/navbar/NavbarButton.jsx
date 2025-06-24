@@ -1,5 +1,31 @@
 import Link from 'next/link'
 import React from 'react'
+import {
+  HomeIcon,
+  UserIcon,
+  BriefcaseIcon,
+  MailIcon,
+  FileTextIcon,
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+} from 'lucide-react'
+
+const getLucideIcon = (icon) => {
+  const lucideIcons = {
+    home: HomeIcon,
+    about: UserIcon,
+    projects: BriefcaseIcon,
+    contact: MailIcon,
+    resume: FileTextIcon,
+    github: GithubIcon,
+    linkedin: LinkedinIcon,
+    X: TwitterIcon,
+  }
+
+  const IconComponent = lucideIcons[icon]
+  return IconComponent ? <IconComponent className="w-full h-full" color="white" /> : null
+}
 
 const getIcon = (icon) => {
   const iconPaths = {
@@ -27,13 +53,16 @@ const NavbarButton = ( {xCoordinate, yCoordinate, label, link, icon, newTab} ) =
         name = {label} 
         aria-label = {label}
       >
-        <span className='relative w-23 h-23 p-2 border icon-border rounded-full backdrop-blur-[5px] animate-spin-reverse menu-icon '>
-          { getIcon(icon) }
-          <span className='peer bg-transparent absolute top-0 left-0 w-full h-full'></span>
-          <span className='absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-labelBackground text-foreground text-sm rounded--md shadow-lg whispace-nowrap font-witcher'>
-            {label}
-          </span>
+      <span className="relative resizable-icon-size p-2 border icon-border rounded-full backdrop-blur-[5px] animate-spin-reverse menu-icon">
+        {getIcon(icon)}
+        <span className='peer bg-transparent absolute top-0 left-0 w-full h-full'></span>
+        <span className='absolute hidden peer-hover:block left-full mx-2 top-1/2 -translate-y-1/2 bg-labelBackground text-foreground shadow-lg whitespace-nowrap resizable-icon-label-size font-witcher'>
+          {label}
         </span>
+        <span className="absolute bottom-3 right-3 translate-x-1/2 translate-y-1/2 w-[25%] h-[25%] p-1 rounded-full flex items-center justify-center bg-labelBackground z-5">
+          {getLucideIcon(icon)}
+        </span>
+      </span>
       </Link>
     </div>
   )
